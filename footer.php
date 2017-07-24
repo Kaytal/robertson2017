@@ -13,18 +13,15 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'robertson2017' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'robertson2017' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'robertson2017' ), 'robertson2017', '<a href="https://automattic.com/">Underscores.me</a>' );
-			?>
-		</div><!-- .site-info -->
+	<footer class="site-footer">
+        <div class="site-footer__premier-logo">
+            <a href="http://www.premier-experience.com/">
+                <img src="<?= get_template_directory_uri(); ?>/images/premier-logo.png" alt="Premier Vaction and Events" />
+            </a>
+        </div>
+        <div class="site-footer__copyright">
+            Copyright &copy;<?= date('Y'); ?> Premier Vacation and Events. ALl Rights Reserved.
+        </div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

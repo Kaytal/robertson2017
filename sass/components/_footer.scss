@@ -1,0 +1,20 @@
+.site-footer {
+    background-color: $brand-primary;
+    color: $white;
+    text-align: center;
+    padding: 5rem 1rem;
+    &__premier-logo {
+        margin: 0 auto 1rem auto;
+        @include tablet-larger {
+            width: 25%;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+    &__copyright {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+}

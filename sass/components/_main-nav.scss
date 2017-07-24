@@ -1,0 +1,60 @@
+.site-header {
+    background-color: $brand-primary;
+    padding: 1em 0;
+    .navigation-wrapper {
+        @media (min-width: $tablet-large) {
+            display: flex;
+        }
+    }
+}
+
+.site-branding {
+    max-width: 210px;
+}
+
+.top-navigation {
+    display: none;
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li {
+            line-height: 40px;
+            padding-left: 1em;
+            &.current-menu-item {
+                a {
+                    font-weight: bold;
+                }
+            }
+            a {
+                text-decoration: none;
+                color: $white;
+                text-transform: uppercase;
+            }
+        }
+    }
+    @media (min-width: $tablet-large) {
+        display: block;
+        text-align: right;
+        flex: 1;
+        ul {
+            li {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.mobile-menu-toggle {
+    position: absolute;
+    top: 12px;
+    right: 1em;
+    svg {
+        height: 45px;
+        width: 45px;
+        fill: #ffffff;
+    }
+    @media (min-width: $tablet-large) {
+        display: none;
+    }
+}

@@ -8,7 +8,6 @@
  *
  * @package robertson2017
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -18,6 +17,8 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
+    <script src="https://use.typekit.net/tgl5vqw.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -43,7 +44,7 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'robertson2017' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'robertson2017' ); ?></button>
 			<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',
@@ -51,6 +52,11 @@
 				) );
 			?>
 		</nav><!-- #site-navigation -->
+        <div class="hero">
+            <a href="#booking-link">
+                <img src="<?= get_template_directory_uri() ?>/images/hero-image-med.jpg" srcset="<?= get_template_directory_uri() ?>/images/hero-image-high.jpg 1921w" alt="yah">
+            </a>
+        </div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
