@@ -1,0 +1,9 @@
+.hero {
+    img {
+        width: 100%;
+        display: block;
+    }
+    @include tablet-phone-break {
+        display: none;
+    }
+}

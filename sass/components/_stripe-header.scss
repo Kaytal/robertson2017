@@ -1,0 +1,52 @@
+
+.stripe-header {
+    background-color: $color-blue-ocean;
+    &__img {
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 0 1rem;
+        height: 2rem;
+        img {
+            display: block;
+            transform: translateY(-2rem);
+            margin: 0 auto;
+            @include tablet-phone-break {
+                transform: translateY(-2vw);
+            }
+        }
+    }
+}
+
+.stripe-inner {
+    padding: 3rem 1rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.stripe-row {
+    @include tablet-larger {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__content {
+        font-size: 1.25rem;
+        h2 {
+            font-size: 2rem;
+            color: $color-blue-teal;
+            text-decoration: underline;
+            font-weight: 500;
+            margin: 0;
+        }
+        @include tablet-larger {
+            width: 50%;
+        }
+    }
+    &__img {
+        @include tablet-larger {
+            width: 40%;
+        }
+    }
+    &:last-of-type {
+        text-align: right;
+    }
+}

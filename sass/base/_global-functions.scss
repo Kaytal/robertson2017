@@ -1,5 +1,6 @@
 $container-width: calc(1170px - 2em);
 
+$large-desktop-break: $desktop-large;
 $tablet-break: $tablet-large;
 $phone-break: $tablet-small;
 
@@ -9,7 +10,7 @@ $phone-break: $tablet-small;
     padding: 0 1em;
 }
 
-@mixin rf-retina() {
+@mixin retina() {
     @media (min--moz-device-pixel-ratio: 1.3),
     (-o-min-device-pixel-ratio: 2.6/2),
     (-webkit-min-device-pixel-ratio: 1.3),
@@ -19,19 +20,19 @@ $phone-break: $tablet-small;
     }
 }
 
-@mixin rf-break-smaller ($break-point) {
+@mixin break-smaller ($break-point) {
     @media only screen and (max-width: $break-point) {
         @content;
     }
 }
 
-@mixin rf-mid-breaker ($break-point1, $break-point2) {
+@mixin mid-breaker ($break-point1, $break-point2) {
     @media only screen and (min-width: $break-point1) and (max-width: $break-point2) {
         @content;
     }
 }
 
-@mixin rf-break-larger($break-point) {
+@mixin break-larger($break-point) {
     @media only screen and (min-width: $break-point) {
         @content;
     }
@@ -48,28 +49,34 @@ $phone-break: $tablet-small;
 
 //Size Mixins
 @mixin tablet-phone-break() {
-    @include rf-break-smaller($tablet-break) {
+    @include break-smaller($tablet-break) {
+        @content;
+    }
+}
+
+@mixin desktop-larger() {
+    @include break-larger($large-desktop-break) {
         @content;
     }
 }
 
 @mixin tablet-larger() {
-    @include rf-break-larger($tablet-break) {
+    @include break-larger($tablet-break) {
         @content;
     }
 }
 @mixin tablet-break() {
-    @include rf-mid-breaker($min-tablet-break,$tablet-break) {
+    @include mid-breaker($min-tablet-break,$tablet-break) {
         @content;
     }
 }
 @mixin phone-break() {
-    @include rf-break-smaller($nav-break) {
+    @include break-smaller($nav-break) {
         @content;
     }
 }
 @mixin phone-break-sm() {
-    @include rf-break-smaller($phone-break) {
+    @include break-smaller($phone-break) {
         @content;
     }
 }

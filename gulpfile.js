@@ -2,6 +2,7 @@
 
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
     rename = require('gulp-rename'),
@@ -17,8 +18,10 @@ gulp.task('default', ['sass', 'sass:watch', 'scripts', 'script:watch', 'browser-
 
 gulp.task('sass', function() {
    return gulp.src('sass/**/*.scss')
+       .pipe(sourcemaps.init())
        .pipe(sass().on('error', sass.logError))
        .pipe(autoprefixer())
+       .pipe(sourcemaps.write())
        .pipe(gulp.dest('./'))
        .pipe(browserSync.stream());
 });

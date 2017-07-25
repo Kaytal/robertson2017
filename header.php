@@ -23,38 +23,30 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'robertson2017' ); ?></a>
-
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+        <div class="site-navigation">
+            <nav id="site-navigation" class="main-navigation">
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'robertson2017' ); ?></button>
+                <?php
+                wp_nav_menu( array(
+                    'theme_location' => 'menu-1',
+                    'menu_id'        => 'primary-menu',
+                ) );
+                ?>
+            </nav><!-- #site-navigation -->
+            <div class="site-branding">
+                <div class="site-logo">
+                    <img src="<?= get_template_directory_uri() ?>/images/logo.png" alt="yah">
+                </div>
+                <div class="book-now-stripe">
+                    <a href="#booking-link">Book Your Cabin Here <span class="booking-left">(Only 15 Cabins Left)</span></a>
+                </div>
+            </div><!-- .site-branding -->
+        </div>
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'robertson2017' ); ?></button>
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
-			?>
-		</nav><!-- #site-navigation -->
         <div class="hero">
             <a href="#booking-link">
-                <img src="<?= get_template_directory_uri() ?>/images/hero-image-med.jpg" srcset="<?= get_template_directory_uri() ?>/images/hero-image-high.jpg 1921w" alt="yah">
+                <img src="<?= get_template_directory_uri() ?>/images/hero-image-med.jpg" srcset="<?= get_template_directory_uri() ?>/images/hero-image-med.jpg 1x, <?= get_template_directory_uri() ?>/images/hero-image-high.jpg 2x" alt="Book Now!">
             </a>
         </div>
 	</header><!-- #masthead -->
