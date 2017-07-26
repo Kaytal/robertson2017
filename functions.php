@@ -119,7 +119,11 @@ add_action( 'widgets_init', 'robertson2017_widgets_init' );
 function robertson2017_scripts() {
 	wp_enqueue_style( 'robertson2017-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'robertson2017-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+    wp_deregister_script('jquery');
+    wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://code.jquery.com/jquery-3.2.1.min.js", false, null);
+    wp_enqueue_script('jquery');
+
+	wp_enqueue_script( 'robertson2017-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151216', true );
 
 	wp_enqueue_script( 'robertson2017-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 

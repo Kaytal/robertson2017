@@ -21,15 +21,25 @@
         }
     }
     &.toggled {
+        .menu-toggle {
+            transform: translateX(-50%);
+            left: 50%;
+            &:before {
+                content: 'close ';
+            }
+            position: fixed;
+        }
         .menu {
-            position: absolute;
+            position: fixed;
             background-color: $color-blue-ocean;
             width: 100%;
             z-index: 1;
             top: 0;
             left: 0;
             text-align: center;
+            padding-top: 2rem;
             a {
+                color: $white;
                 font-size: 1.5rem;
                 padding: .25rem 1rem;
             }
@@ -70,25 +80,17 @@
     }
 }
 
-.mobile-menu-toggle {
-    position: absolute;
-    top: 12px;
-    right: 1em;
-    svg {
-        height: 45px;
-        width: 45px;
-        fill: #ffffff;
-    }
-    @media (min-width: $tablet-large) {
-        display: none;
-    }
-}
 .site-navigation {
     position: relative;
     .menu-toggle {
         position: absolute;
         right: 0;
         top: 0;
+        z-index: 10;
+        border: 0;
+        background-color: $color-blue-ocean;
+        color: $white;
+        text-transform: uppercase;
     }
     @include tablet-phone-break {
         padding-top: 1rem;

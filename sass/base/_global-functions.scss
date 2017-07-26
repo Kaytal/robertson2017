@@ -2,6 +2,7 @@ $container-width: calc(1170px - 2em);
 
 $large-desktop-break: $desktop-large;
 $tablet-break: $tablet-large;
+$min-tablet-break: $tablet-small;
 $phone-break: $tablet-small;
 
 .container {

@@ -39,7 +39,7 @@
                     <img src="<?= get_template_directory_uri() ?>/images/logo.png" alt="yah">
                 </div>
                 <div class="book-now-stripe">
-                    <a href="#booking-link">Book Your Cabin Here <span class="booking-left">(Only 15 Cabins Left)</span></a>
+                    <a href="#booking-link">Book Your Cabin Here <span class="booking-left"><?= get_field('cabins_left_text', $post->ID) ?></span></a>
                 </div>
             </div><!-- .site-branding -->
         </div>
